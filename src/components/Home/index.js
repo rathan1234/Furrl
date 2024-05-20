@@ -23,7 +23,7 @@ const Home = () => {
   document.addEventListener("scroll", () => {
     const { scrollHeight, clientHeight, scrollTop } = document.documentElement;
 
-    if (Math.ceil(scrollTop + clientHeight) >= scrollHeight - 10) {
+    if (Math.ceil(scrollTop + clientHeight) >= scrollHeight - 20) {
       !reachedEnd && updateReached(true);
     }
   });
