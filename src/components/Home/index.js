@@ -20,7 +20,7 @@ const Home = () => {
   const [filters, updateFilters] = useState([]);
   const [activeFilter, updateActiveFilter] = useState(null);
 
-  document.addEventListener("scrollend", () => {
+  document.addEventListener("scroll", () => {
     const { scrollHeight, clientHeight, scrollTop } = document.documentElement;
 
     if (Math.ceil(scrollTop + clientHeight) >= scrollHeight) {
