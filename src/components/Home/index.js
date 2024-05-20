@@ -20,10 +20,13 @@ const Home = () => {
   const [filters, updateFilters] = useState([]);
   const [activeFilter, updateActiveFilter] = useState(null);
 
-  document.addEventListener("scroll", () => {
+  window.addEventListener("scroll", () => {
     const { scrollHeight, clientHeight, scrollTop } = document.documentElement;
 
-    if (Math.ceil(scrollTop + clientHeight) >= scrollHeight - 20) {
+    if (
+      window.innerHeight + window.scrollY >=
+      document.body.offsetHeight - 10
+    ) {
       !reachedEnd && updateReached(true);
     }
   });
