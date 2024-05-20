@@ -31,6 +31,7 @@ const Home = () => {
   const activeFilterChanged = (item) => {
     updateProducts(defaultProducts);
     updateActiveFilter(item);
+    updateReached(false);
   };
 
   const getProducts = async () => {
