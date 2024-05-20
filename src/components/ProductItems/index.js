@@ -30,6 +30,7 @@ const ProductItems = (props) => {
       className={`product-item ${index % 5 === 2 && "product-item-single"}`}
     >
       <img
+        loading="lazy"
         className={`product-img ${index % 5 === 2 && "product-img-single"}`}
         src={item["images"][0]["src"]}
         alt={item["title"]}
