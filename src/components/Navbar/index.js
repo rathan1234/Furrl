@@ -1,18 +1,24 @@
+import { useEffect } from "react";
 import "./index.css";
 
 const Navbar = () => {
   let lastScrollTop = 0;
-  window.addEventListener("scroll", () => {
-    const navbar = document.getElementById("nav");
-    let scrollTop = window.scrollY;
 
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-      navbar.style.top = "-100px";
-    } else {
-      navbar.style.top = "0";
-    }
-    lastScrollTop = scrollTop;
-  });
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const navbar = document.getElementById("nav");
+      let scrollTop = window.scrollY;
+
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        navbar.style.top = "-100px";
+      } else {
+        navbar.style.top = "0";
+      }
+      lastScrollTop = scrollTop;
+    });
+
+    return window.removeEventListener("scroll", () => {});
+  }, []);
 
   return (
     <nav className="nav-bar" id="nav">

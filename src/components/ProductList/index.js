@@ -1,6 +1,6 @@
 import "./index.css";
 
-const ProductItems = (props) => {
+const ProductList = (props) => {
   const { item, index } = props;
 
   const share = async (event) => {
@@ -55,4 +55,4 @@ const ProductItems = (props) => {
   );
 };
 
-export default ProductItems;
+export default ProductList;

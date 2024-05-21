@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./index.css";
 import Navbar from "../Navbar";
 import CategoryFilters from "../CategoryFilters";
-import ProductItems from "../ProductItems";
+import ProductList from "../ProductList";
 import Loader from "../Loader";
 
 const defaultProducts = {
@@ -19,15 +19,6 @@ const Home = () => {
   const [reachedEnd, updateReached] = useState(false);
   const [filters, updateFilters] = useState([]);
   const [activeFilter, updateActiveFilter] = useState(null);
-
-  window.addEventListener("scroll", () => {
-    if (
-      window.innerHeight + window.scrollY >=
-      document.body.offsetHeight - 20
-    ) {
-      !reachedEnd && updateReached(true);
-    }
-  });
 
   const activeFilterChanged = (item) => {
     updateProducts(defaultProducts);
@@ -109,7 +100,7 @@ const Home = () => {
 
   const renderProducts = () => {
     return products.products.map((each, index) => (
-      <ProductItems key={each.id} item={each} index={index} />
+      <ProductList key={each.id} item={each} index={index} />
     ));
   };
 
@@ -123,6 +114,19 @@ const Home = () => {
 
   useEffect(() => {
     getFilters();
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 80
+      ) {
+        !reachedEnd && updateReached(true);
+      }
+    });
+
+    return window.removeEventListener("scroll", () => {});
   }, []);
 
   return (
