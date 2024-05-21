@@ -27,6 +27,7 @@
 .product-img-single {
   min-height: 85%;
   max-height: 85%;
+  padding-right: 2px;
 }
 
 .product-details-container {
@@ -88,7 +89,7 @@
 }
 
 .share-icon-single {
-  top: 55%;
+  top: 72%;
 }
 
 @media screen and (min-width: 576px) {
