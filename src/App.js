@@ -1,4 +1,9 @@
 import Home from "./components/Home";
+import "./App.css";
 
-const App = () => <Home />;
+const App = () => (
+  <div className="main">
+    <Home />
+  </div>
+);
 export default App;

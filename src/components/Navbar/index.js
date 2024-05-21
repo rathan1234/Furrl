@@ -2,9 +2,13 @@ import { useEffect } from "react";
 import "./index.css";
 
 const Navbar = () => {
-  let lastScrollTop = 0;
+  const homeBtn = () => {
+    document.documentElement.scrollTop = 0;
+  };
 
   useEffect(() => {
+    let lastScrollTop = 0;
+
     window.addEventListener("scroll", () => {
       const navbar = document.getElementById("nav");
       let scrollTop = window.scrollY;
@@ -18,11 +22,16 @@ const Navbar = () => {
     });
 
     return window.removeEventListener("scroll", () => {});
-  }, []);
+  });
 
   return (
     <nav className="nav-bar" id="nav">
-      <img src="/assets/furrl.svg" alt="Furrl" />
+      <img
+        onClick={homeBtn}
+        className="company-logo"
+        src="/assets/furrl.svg"
+        alt="Furrl"
+      />
       <div className="nav-icons-container">
         <a className="nav-bar-icons" href="https://furrl.in/wishlist">
           <img src="/assets/wishlist.svg" alt="wishlist" />

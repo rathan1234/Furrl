@@ -23,15 +23,19 @@ const ProductList = (props) => {
     window.location.href = `https://furrl.in/productDetail?id=${item.id}&ref=vibeResults_HomeHunts`;
   };
 
+  const desktopView = window.innerWidth >= 576;
+
+  const fullWidthProduct = desktopView ? false : index % 5 === 2;
+
   return (
     <li
       onClick={redirect}
       key={item["id"]}
-      className={`product-item ${index % 5 === 2 && "product-item-single"}`}
+      className={`product-item ${fullWidthProduct && "product-item-single"}`}
     >
       <img
         loading="lazy"
-        className={`product-img ${index % 5 === 2 && "product-img-single"}`}
+        className={`product-img ${fullWidthProduct && "product-img-single"}`}
         src={item["images"][0]["src"]}
         alt={item["title"]}
       />
@@ -40,7 +44,7 @@ const ProductList = (props) => {
           src="/assets/share.svg"
           alt="share"
           onClick={share}
-          className={`share-icon ${index % 5 === 2 && "share-icon-single"}`}
+          className={`share-icon ${fullWidthProduct && "share-icon-single"}`}
         />
 
         <p className="vendor-name">{item["brand"][0]["name"]}</p>

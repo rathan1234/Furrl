@@ -2,13 +2,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 8vh;
+  height: 7vh;
   width: 100%;
   position: sticky;
   top: 0;
   background-color: #fff;
   transition: 0.4s;
   z-index: 1;
+}
+
+.company-logo {
+  cursor: pointer;
 }
 
 .nav-icons-container {
@@ -25,4 +29,21 @@
   font-size: 20px;
   margin-left: 15px;
   color: #000;
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-bar {
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 8%;
+    height: 10vh;
+  }
+
+  .nav-icons-container {
+    position: static;
+  }
+
+  .nav-bar-icons {
+    margin-left: 40px;
+  }
 }
