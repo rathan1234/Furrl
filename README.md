@@ -62,7 +62,7 @@ This React.js application provides a user-friendly and responsive Home Hunts pro
 
     `npm start`
 
-_This will typically start the server on http://localhost:3000 by default._
+    _This will typically start the server on http://localhost:3000 by default._
 
 2. Open [localhost](http://localhost:3000) in your web browser.
 
