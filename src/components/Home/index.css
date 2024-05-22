@@ -104,6 +104,7 @@
 
 @media screen and (min-width: 1024px) {
   .home-bg-banner {
+    width: 100vw;
     height: 65vh;
   }
 
